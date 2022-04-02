@@ -26,6 +26,15 @@ public class Recipe {
     private String image;
 
 
+    @OneToOne(
+            mappedBy = "recipe",
+            orphanRemoval = true,
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
+
+    )
+    private Instruction instruction;
+
+
     public Recipe(String name, String image) {
         this.name = name;
         this.image = image;
