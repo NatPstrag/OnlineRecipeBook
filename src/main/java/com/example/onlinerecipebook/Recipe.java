@@ -2,42 +2,44 @@ package com.example.onlinerecipebook;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name ="Recipe")
 @Table(name = "recipe")
 public class Recipe {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long recipe_id;
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
+    @Column(name ="id")
+    private Long id;
 
-    private String recipe_name;
+    @Column(
+            name = "recipe_name",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
+    private String name;
+
+    @Column(
+            name = "recipe_image",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String image;
+
+
+    public Recipe(String name, String image) {
+        this.name = name;
+        this.image = image;
+    }
 
     public Recipe() {
     }
 
-    public Recipe(String recipe_name, String image) {
-        this.recipe_name = recipe_name;
-        this.image = image;
-    }
+    public Long getId() {return id;}
+    public void setId(Long id) {this.id = id;}
 
-    public Long getRecipe_id() {
-        return recipe_id;
-    }
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
 
-    public String getRecipe_name() {
-        return recipe_name;
-    }
-
-    public void setRecipe_name(String recipe_name) {
-        this.recipe_name = recipe_name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
+    public String getImage() {return image;}
+    public void setImage(String image) {this.image = image;}
 }
