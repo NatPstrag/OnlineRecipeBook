@@ -1,5 +1,6 @@
-package com.example.onlinerecipebook;
+package com.example.onlinerecipebook.Category;
 
+import com.example.onlinerecipebook.Category.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -9,5 +10,5 @@ public interface CategoryRepository extends JpaRepository <Category, Long> {
 
     @Query("SELECT c from Category c where c.category =?1")
     Optional<Category> findRecipeByCategory(String category);
-    Optional<Category> findById(int id);
+
 }

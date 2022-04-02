@@ -1,8 +1,8 @@
-package com.example.onlinerecipebook;
+package com.example.onlinerecipebook.Category;
+
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 public class CategoryConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner( CategoryRepository repository){
+    CommandLineRunner commandLineRunner1( CategoryRepository repository){
 
         return args -> {
 
@@ -25,7 +25,6 @@ public class CategoryConfig {
             Category cocktails = new Category(8,"Cocktails");
             Category beverages = new Category(9, "Beverages");
             Category side_dish = new Category(10, "Side dish");
-
 
 
             List<Category> categories = List.of(breakfast,lunch,soup,salad,pasta,main_dish, condiments, cocktails, beverages, side_dish);

@@ -1,4 +1,4 @@
-package com.example.onlinerecipebook;
+package com.example.onlinerecipebook.Category;
 
 
 import javax.persistence.*;
@@ -22,7 +22,7 @@ public class Category {
     public Category() {
 
     }
-    
+
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
