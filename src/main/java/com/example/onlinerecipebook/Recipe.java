@@ -2,37 +2,18 @@ package com.example.onlinerecipebook;
 
 import javax.persistence.*;
 
-@Entity(name ="Recipe")
-@Table(name = "recipe")
+@Entity
+@Table
 public class Recipe {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
     private Long id;
 
-    @Column(
-            name = "recipe_name",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
-    private String name;
 
-    @Column(
-            name = "recipe_image",
-            nullable = false,
-            columnDefinition = "TEXT"
-    )
+    private String name;
     private String image;
 
-
-    @OneToOne(
-            mappedBy = "recipe",
-            orphanRemoval = true,
-            cascade = {CascadeType.PERSIST, CascadeType.REMOVE}
-
-    )
-    private Instruction instruction;
 
 
     public Recipe(String name, String image) {

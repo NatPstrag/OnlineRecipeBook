@@ -2,8 +2,8 @@ package com.example.onlinerecipebook;
 
 import javax.persistence.*;
 
-@Entity(name = "Instruction")
-@Table(name = "instruction")
+@Entity
+@Table
 public class Instruction {
 
     @Id
@@ -18,15 +18,6 @@ public class Instruction {
     private String instruction;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(
-            name = "recipe_id",
-            referencedColumnName = "id",
-            foreignKey = @ForeignKey(
-                    name = "recipe_id_fk"
-            )
-    )
-    private Recipe recipe;
 
 
 
