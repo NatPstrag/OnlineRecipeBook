@@ -1,5 +1,9 @@
 package com.example.onlinerecipebook.Ingridient;
 
+import com.example.onlinerecipebook.Category.Category;
+import com.example.onlinerecipebook.Difficulty.Difficulty;
+import com.example.onlinerecipebook.Recipe;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +16,25 @@ public class Ingredient {
     private String name;
     private double quantity;
     private String unit;
+
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    @ManyToOne
+    @MapsId("id")
+    @JoinColumn(
+            name = "recipe_id",
+            foreignKey = @ForeignKey(
+                    name = "ingredient_recipe_id"
+            )
+    )
+    private Recipe recipe;
 
     public Ingredient(String name, double quantity, String unit) {
         this.name = name;

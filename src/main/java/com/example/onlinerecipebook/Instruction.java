@@ -18,6 +18,16 @@ public class Instruction {
     private String instruction;
 
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(
+            name = "recipe_id",
+            referencedColumnName = "id",
+            foreignKey = @ForeignKey(
+                    name = "recipe_id_fk"
+            )
+    )
+    private Recipe recipe;
+
 
 
 

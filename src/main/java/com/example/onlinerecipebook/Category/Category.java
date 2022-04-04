@@ -1,7 +1,11 @@
 package com.example.onlinerecipebook.Category;
 
 
+import com.example.onlinerecipebook.Recipe;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -13,6 +17,11 @@ public class Category {
 
     private String category;
 
+    @OneToMany(
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            mappedBy = "category"
+    )
+    private List<Recipe> recipe = new ArrayList<>();
 
     public Category(int id,String category) {
         this.id = id;

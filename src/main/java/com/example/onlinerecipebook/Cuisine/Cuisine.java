@@ -1,6 +1,10 @@
 package com.example.onlinerecipebook.Cuisine;
 
+import com.example.onlinerecipebook.Recipe;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -10,6 +14,13 @@ public class Cuisine {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private int id;
     private String cuisine;
+
+    @OneToMany(
+            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
+            mappedBy = "cuisine"
+    )
+    private List<Recipe> recipe = new ArrayList<>();
+
 
     public Cuisine() {
     }
