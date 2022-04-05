@@ -1,18 +1,29 @@
 package com.example.onlinerecipebook.Recipe;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
-public interface RecipeRepository extends CrudRepository<Recipe, Long> {
+public class RecipeRepository {
 
+    public List<Recipe> recipes = new ArrayList<Recipe>();
 
-    @Query("SELECT r from Recipe r where r.name =?1")
-    List<Recipe> findAllByOrderByIdAsc();
-    Optional<Recipe> findRecipeByName(String name);
+    public List<Recipe> getAll(){
+        return  recipes;
+    }
 
+    public String add(Recipe recipe) {
+        recipes.add(recipe);
+        return "Successfully added";
+    }
+
+    public String edit(Recipe recipe) {
+        recipes.stream().filter(r -> r.getId() == recipe.getId()).forEach(r -> {
+            r.setName(recipe.getName());
+            r.setImage(recipe.getImage());
+        });
+        return "Successfully edit";
+    }
 }
