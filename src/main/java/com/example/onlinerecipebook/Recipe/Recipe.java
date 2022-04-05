@@ -1,9 +1,10 @@
-package com.example.onlinerecipebook;
+package com.example.onlinerecipebook.Recipe;
 
 import com.example.onlinerecipebook.Category.Category;
 import com.example.onlinerecipebook.Cuisine.Cuisine;
 import com.example.onlinerecipebook.Difficulty.Difficulty;
 import com.example.onlinerecipebook.Ingridient.Ingredient;
+import com.example.onlinerecipebook.Instruction.Instruction;
 
 import javax.persistence.*;
 import java.util.ArrayList;

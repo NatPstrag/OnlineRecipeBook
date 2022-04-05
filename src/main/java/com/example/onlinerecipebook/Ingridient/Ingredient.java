@@ -1,13 +1,13 @@
 package com.example.onlinerecipebook.Ingridient;
 
-import com.example.onlinerecipebook.Category.Category;
 import com.example.onlinerecipebook.Difficulty.Difficulty;
-import com.example.onlinerecipebook.Recipe;
+import com.example.onlinerecipebook.Recipe.Recipe;
+import com.example.onlinerecipebook.Unit.Unit;
 
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table (name = "ingredients")
 public class Ingredient {
 
     @Id
@@ -15,7 +15,6 @@ public class Ingredient {
     private Long id;
     private String name;
     private double quantity;
-    private String unit;
 
 
     public Recipe getRecipe() {
@@ -36,18 +35,26 @@ public class Ingredient {
     )
     private Recipe recipe;
 
-    public Ingredient(String name, double quantity, String unit) {
+    @ManyToOne
+    @MapsId("id")
+    @JoinColumn(
+            name = "unit_id",
+            foreignKey = @ForeignKey(
+                    name = "ingredient_unit_id_fk"
+            )
+    )
+    private Unit unit;
+
+    public Ingredient(String name, double quantity) {
         this.name = name;
         this.quantity = quantity;
-        this.unit = unit;
+
     }
 
     public Ingredient() {
     }
 
-    public Ingredient(String unit) {
-        this.unit = unit;
-    }
+
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
@@ -58,6 +65,5 @@ public class Ingredient {
     public double getQuantity() {return quantity;}
     public void setQuantity(double quantity) {this.quantity = quantity;}
 
-    public String getUnit() {return unit;}
-    public void setUnit(String unit) {this.unit = unit;}
+
 }

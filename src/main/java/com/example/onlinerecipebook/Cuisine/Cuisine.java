@@ -1,6 +1,6 @@
 package com.example.onlinerecipebook.Cuisine;
 
-import com.example.onlinerecipebook.Recipe;
+import com.example.onlinerecipebook.Recipe.Recipe;
 
 import javax.persistence.*;
 import java.util.ArrayList;

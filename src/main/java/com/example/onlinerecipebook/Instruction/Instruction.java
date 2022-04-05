@@ -1,4 +1,6 @@
-package com.example.onlinerecipebook;
+package com.example.onlinerecipebook.Instruction;
+
+import com.example.onlinerecipebook.Recipe.Recipe;
 
 import javax.persistence.*;
 
