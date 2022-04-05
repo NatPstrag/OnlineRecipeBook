@@ -24,6 +24,11 @@ public class RecipeRepository {
             r.setName(recipe.getName());
             r.setImage(recipe.getImage());
         });
-        return "Successfully edit";
+        return "Successfully updated";
+    }
+
+    public String delete(int recipeNo) {
+        recipes.remove(recipeNo-1);
+        return "Deleted";
     }
 }

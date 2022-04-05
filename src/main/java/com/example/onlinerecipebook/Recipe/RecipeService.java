@@ -22,4 +22,8 @@ public class RecipeService {
     public String edit(Recipe recipe) {
         return repository.edit(recipe);
     }
+
+    public String delete(int recipeNo) {
+        return repository.delete(recipeNo);
+    }
 }
