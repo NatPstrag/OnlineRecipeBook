@@ -17,9 +17,9 @@ public class DifficultyConfig {
 
         return args -> {
 
-            Difficulty easy = new Difficulty(1, "Easy");
-            Difficulty medium = new Difficulty(2, "Medium");
-            Difficulty hard = new Difficulty(3, "Hard");
+            Difficulty easy = new Difficulty("Easy");
+            Difficulty medium = new Difficulty("Medium");
+            Difficulty hard = new Difficulty("Hard");
 
             List<Difficulty> difficulty = List.of(easy, medium, hard);
             for(Difficulty x : difficulty){

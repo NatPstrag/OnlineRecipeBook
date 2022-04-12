@@ -15,17 +15,17 @@ public class CuisineConfig {
 
         return args -> {
 
-            Cuisine polish = new Cuisine(1, "Polish");
-            Cuisine french = new Cuisine(2, "French");
-            Cuisine spanish = new Cuisine(3, "Spanish");
-            Cuisine greek = new Cuisine(4, "Greek");
-            Cuisine japanese = new Cuisine(5, "Japanese");
-            Cuisine chinese = new Cuisine(6, "Chinese");
-            Cuisine fast_food = new Cuisine(7, "Fast-food");
-            Cuisine mexican = new Cuisine(8, "Mexican");
-            Cuisine indian = new Cuisine(9, "Indian");
-            Cuisine thai = new Cuisine(10, "Thai");
-            Cuisine italian = new Cuisine(11, "Italian");
+            Cuisine polish = new Cuisine("Polish");
+            Cuisine french = new Cuisine("French");
+            Cuisine spanish = new Cuisine("Spanish");
+            Cuisine greek = new Cuisine("Greek");
+            Cuisine japanese = new Cuisine("Japanese");
+            Cuisine chinese = new Cuisine("Chinese");
+            Cuisine fast_food = new Cuisine("Fast-food");
+            Cuisine mexican = new Cuisine("Mexican");
+            Cuisine indian = new Cuisine("Indian");
+            Cuisine thai = new Cuisine("Thai");
+            Cuisine italian = new Cuisine("Italian");
 
             List<Cuisine> cuisine = List.of(polish, french, spanish, greek, japanese, chinese, fast_food, mexican, indian, thai, italian);
             for(Cuisine x : cuisine){

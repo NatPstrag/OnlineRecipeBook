@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface DifficultyRepository extends JpaRepository<Difficulty, Long> {
+public interface DifficultyRepository extends JpaRepository<Difficulty, String> {
 
 
     @Query("SELECT d from Difficulty d where d.difficult =?1")

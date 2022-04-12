@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface CuisineRepository extends JpaRepository<Cuisine, Long> {
+public interface CuisineRepository extends JpaRepository<Cuisine, String> {
 
     @Query("SELECT c from Cuisine c where c.cuisine =?1")
     Optional<Cuisine> findRecipeByCuisine(String cuisine);

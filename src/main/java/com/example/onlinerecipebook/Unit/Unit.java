@@ -9,32 +9,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table (name = "units")
+@Table(name = "measure_unit")
 public class Unit {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private int id;
     private String unit;
 
-    @OneToMany(
-            cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
-            mappedBy = "unit"
-    )
-    private List<Ingredient> ingredients = new ArrayList<>();
+    @ManyToMany(mappedBy = "units")
+    private List<Ingredient> ingredients;
 
+
+    public Unit(String unit, List<Ingredient> ingredients) {
+        this.unit = unit;
+        this.ingredients = ingredients;
+    }
 
     public Unit() {
     }
 
-    public Unit(int id, String unit) {
-        this.id = id;
+    public Unit( String unit) {
+
         this.unit = unit;
     }
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
 
     public String getUnit() {return unit;}
     public void setUnit(String unit) {this.unit = unit;}
+
+    public List<Ingredient> getIngredients() {return ingredients;}
+    public void setIngredients(List<Ingredient> ingredients) {this.ingredients = ingredients;}
 }

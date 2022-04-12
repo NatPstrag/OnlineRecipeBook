@@ -15,16 +15,16 @@ public class CategoryConfig {
 
         return args -> {
 
-            Category breakfast = new Category(1, "Breakfast");
-            Category lunch = new Category(2,"Lunch");
-            Category soup = new Category(3,"Soup");
-            Category salad= new Category(4,"Salad");
-            Category pasta = new Category(5,"Pasta");
-            Category main_dish = new Category(6, "Main dish");
-            Category condiments = new Category(7, "Condiments");
-            Category cocktails = new Category(8,"Cocktails");
-            Category beverages = new Category(9, "Beverages");
-            Category side_dish = new Category(10, "Side dish");
+            Category breakfast = new Category( "Breakfast");
+            Category lunch = new Category("Lunch");
+            Category soup = new Category("Soup");
+            Category salad= new Category("Salad");
+            Category pasta = new Category("Pasta");
+            Category main_dish = new Category( "Main dish");
+            Category condiments = new Category( "Condiments");
+            Category cocktails = new Category("Cocktails");
+            Category beverages = new Category( "Beverages");
+            Category side_dish = new Category( "Side dish");
 
 
             List<Category> categories = List.of(breakfast,lunch,soup,salad,pasta,main_dish, condiments, cocktails, beverages, side_dish);
